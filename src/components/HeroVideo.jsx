@@ -6,7 +6,7 @@ import {
   Play,
 } from "lucide-react";
 import { useState } from "react";
-import IntroVideo from "../assets/intro.mp4";
+import IntroVideo from "../assets/Intro.mp4";
 import VideoThumbnail from "../assets/thumbnail.webp";
 
 export default function HeroVideo() {

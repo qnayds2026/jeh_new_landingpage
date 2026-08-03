@@ -6,7 +6,7 @@ import {
   Star,
   CheckCircle2,
 } from "lucide-react";
-import Adil_Sir from "../assets/Adil_Sir.webp";
+import Adil_Sir from "../assets/Adil_sir.webp";
 
 export default function MentorSection() {
   return (
