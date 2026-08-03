@@ -3,15 +3,24 @@ import HeroVideo from "./HeroVideo";
 import HeroCard from "./HeroCard";
 import { Star, Users, ShieldCheck } from "lucide-react";
 
-export default function Hero() {
+
+export default function Hero({onEnrollClick,}) {
   return (
     <section className="relative overflow-hidden bg-[#0A0908] text-[#EDEAE3]">
       <AnimatedBackground />
 
       {/* Grain instead of scanlines — reads like paper/film, not a UI mockup */}
-      <svg className="pointer-events-none absolute inset-0 z-0 h-full w-full opacity-[0.05]" aria-hidden="true">
+      <svg
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full opacity-[0.05]"
+        aria-hidden="true"
+      >
         <filter id="grain">
-          <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" />
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.85"
+            numOctaves="2"
+            stitchTiles="stitch"
+          />
           <feColorMatrix type="saturate" values="0" />
         </filter>
         <rect width="100%" height="100%" filter="url(#grain)" />
@@ -61,10 +70,9 @@ export default function Hero() {
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-8 text-[#A8A29B]">
-            Stop wasting time on random YouTube tutorials. This is a
-            structured, 30-day recorded course — real demonstrations,
-            complete Malayalam explanations, built for people starting from
-            zero.
+            Stop wasting time on random YouTube tutorials. This is a structured,
+            30-day recorded course — real demonstrations, complete Malayalam
+            explanations, built for people starting from zero.
           </p>
 
           {/* Trust — one line of running text, like a photo caption, not a
@@ -94,11 +102,11 @@ export default function Hero() {
             <p className="mb-4 text-sm text-[#A8A29B]">
               Watch this before you enroll —
             </p>
-            <HeroVideo />
+            <HeroVideo  onEnrollClick={onEnrollClick}  />
           </div>
 
           {/* Right */}
-          <HeroCard />
+          <HeroCard  onEnrollClick={onEnrollClick}  />
         </div>
       </div>
     </section>

@@ -8,7 +8,7 @@ const features = [
   "Beginner Friendly Roadmap",
 ];
 
-export default function HeroCard() {
+export default function HeroCard({onEnrollClick,}) {
   return (
     <div className="sticky top-8 overflow-hidden rounded-2xl border border-[#EDEAE3]/10 bg-[#12100D]">
       {/* Offer banner — a stamped ticket stub, not a gradient alert bar */}
@@ -73,6 +73,7 @@ export default function HeroCard() {
         {/* CTA — solid amber, hard offset shadow to match the hero badge,
             no gradient */}
         <button
+        onClick={onEnrollClick}
           type="button"
           className="group mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-[#FFB627] py-5 text-lg font-bold text-[#0A0908] shadow-[4px_4px_0_rgba(237,234,227,0.15)] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFB627] focus-visible:ring-offset-2 focus-visible:ring-offset-[#12100D]"
         >

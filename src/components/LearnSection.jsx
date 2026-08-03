@@ -30,7 +30,7 @@ const cards = [
   },
 ];
 
-export default function LearnSection() {
+export default function LearnSection({onEnrollClick,}) {
   return (
     <section className="relative overflow-hidden bg-[#0A0908] py-24">
       {/* Single off-center glow, matching the hero background instead of
@@ -51,9 +51,9 @@ export default function LearnSection() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-[#A8A29B]">
-            Whether you're a student, job seeker, or working professional,
-            this masterclass gives you the practical skills, mindset, and
-            roadmap needed to confidently begin your cyber security journey.
+            Whether you're a student, job seeker, or working professional, this
+            masterclass gives you the practical skills, mindset, and roadmap
+            needed to confidently begin your cyber security journey.
           </p>
         </div>
 
@@ -104,12 +104,16 @@ export default function LearnSection() {
 
         {/* CTA */}
         <div className="mt-16 text-center">
-          <button
+          <button  
+          onClick={onEnrollClick}       
             type="button"
             className="group inline-flex items-center gap-3 rounded-xl bg-[#FFB627] px-10 py-5 text-lg font-bold text-[#0A0908] shadow-[4px_4px_0_rgba(237,234,227,0.15)] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFB627] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0908]"
           >
             Start Learning Today
-            <ArrowRight size={20} className="transition group-hover:translate-x-1" />
+            <ArrowRight
+              size={20}
+              className="transition group-hover:translate-x-1"
+            />
           </button>
         </div>
       </div>

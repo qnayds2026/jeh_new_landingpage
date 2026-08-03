@@ -1,39 +1,61 @@
-import { Star, GraduationCap, ShieldCheck, CheckCircle2 } from "lucide-react";
+import {
+  Star,
+  GraduationCap,
+  ShieldCheck,
+  CheckCircle2,
+  Play,
+} from "lucide-react";
+import { useState } from "react";
+import IntroVideo from "../assets/intro.mp4";
+import VideoThumbnail from "../assets/thumbnail.webp";
 
 export default function HeroVideo() {
+  const [playing, setPlaying] = useState(false);
   return (
     <div>
       {/* Top info */}
-      <div className="mb-5">
-        <p className="text-sm font-semibold uppercase tracking-widest text-[#FFB627]">
-          Meet your mentor
-        </p>
-        <h3 className="mt-1 font-serif text-3xl font-medium">Alan Sir</h3>
-        <p className="mt-2 text-[#A8A29B]">
-          Cyber Security Trainer • Ethical Hacker • Mentor
-        </p>
-      </div>
-
-      {/* Video */}
       <div className="overflow-hidden rounded-2xl border border-[#EDEAE3]/10 bg-[#12100D]">
-        {/* Simple label bar instead of fake window-chrome/REC dot —
-            honest about what it is: a preview clip, not a live feed */}
-        <div className="flex items-center justify-between border-b border-[#EDEAE3]/10 px-4 py-2.5 text-xs text-[#A8A29B]">
-          <span>Course preview</span>
-          <span>2:14</span>
+        {/* Header */}
+
+        <div className="flex items-center justify-between border-b border-[#EDEAE3]/10 px-4 py-3 text-xs text-[#A8A29B]">
+          <span>Course Introduction</span>
+          <span>1:18</span>
         </div>
 
-        <div className="aspect-video">
-          <iframe
-            className="h-full w-full"
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-            title="JEH Masterclass"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+        <div className="relative aspect-video">
+          {!playing ? (
+            <>
+              <img
+                src={VideoThumbnail}
+                alt="JEH Masterclass Preview"
+                className="h-full w-full object-cover"
+              />
+
+              {/* Dark Overlay */}
+
+              <div className="absolute inset-0 bg-black/20" />
+
+              {/* Play Button */}
+
+              <button
+                onClick={() => setPlaying(true)}
+                className="absolute inset-0 flex items-center justify-center"
+              >
+                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-white/90 backdrop-blur shadow-2xl transition duration-300 hover:scale-110">
+                  <Play
+                    size={42}
+                    className="ml-1 fill-[#0A0908] text-[#0A0908]"
+                  />
+                </div>
+              </button>
+            </>
+          ) : (
+            <video className="h-full w-full" controls autoPlay playsInline>
+              <source src={IntroVideo} type="video/mp4" />
+            </video>
+          )}
         </div>
       </div>
-
       {/* Mentor credentials — single amber accent instead of three
           different neon colors per card */}
       <div className="mt-6 grid grid-cols-3 gap-4">

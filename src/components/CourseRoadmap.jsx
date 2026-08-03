@@ -49,7 +49,7 @@ const roadmap = [
   },
 ];
 
-export default function CourseRoadmap() {
+export default function CourseRoadmap({onEnrollClick,}) {
   return (
     <section className="relative overflow-hidden bg-[#0A0908] py-28">
       <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-[#FFB627]/8 blur-[150px]" />
@@ -136,6 +136,7 @@ export default function CourseRoadmap() {
             </p>
 
             <button
+            onClick={onEnrollClick}
               type="button"
               className="group mt-10 inline-flex items-center gap-3 rounded-xl bg-[#FFB627] px-10 py-5 text-lg font-bold text-[#0A0908] shadow-[4px_4px_0_rgba(237,234,227,0.15)] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFB627] focus-visible:ring-offset-2 focus-visible:ring-offset-[#12100D]"
             >

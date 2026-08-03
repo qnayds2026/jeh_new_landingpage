@@ -1,6 +1,6 @@
 import { ArrowRight, ShieldCheck, Star, CheckCircle2 } from "lucide-react";
 
-export default function FinalCTA() {
+export default function FinalCTA({onEnrollClick,}) {
   return (
     <section className="relative overflow-hidden bg-[#0A0908] py-32">
       <div className="absolute -left-40 top-0 h-[600px] w-[600px] rounded-full bg-[#FFB627]/8 blur-[150px]" />
@@ -52,7 +52,9 @@ export default function FinalCTA() {
             <div className="my-4 border-t border-dashed border-[#EDEAE3]/20" />
             <div className="flex items-baseline justify-between">
               <span className="text-sm text-[#A8A29B]">Offer price</span>
-              <span className="font-serif text-5xl font-medium text-[#FFB627]">₹999</span>
+              <span className="font-serif text-5xl font-medium text-[#FFB627]">
+                ₹999
+              </span>
             </div>
             <p className="mt-3 text-right text-sm font-medium text-[#EDEAE3]">
               You save ₹1,001 today
@@ -60,11 +62,15 @@ export default function FinalCTA() {
           </div>
 
           <button
+          onClick={onEnrollClick}
             type="button"
             className="group mt-10 inline-flex items-center gap-3 rounded-xl bg-[#FFB627] px-12 py-5 text-lg font-bold text-[#0A0908] shadow-[4px_4px_0_rgba(237,234,227,0.15)] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFB627] focus-visible:ring-offset-2 focus-visible:ring-offset-[#12100D]"
           >
             Get Instant Access
-            <ArrowRight size={20} className="transition group-hover:translate-x-1" />
+            <ArrowRight
+              size={20}
+              className="transition group-hover:translate-x-1"
+            />
           </button>
 
           {/* Trust — single accent color, no emoji */}

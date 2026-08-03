@@ -1,4 +1,12 @@
-import { Users, GraduationCap, ShieldCheck, Award, Star, CheckCircle2 } from "lucide-react";
+import {
+  Users,
+  GraduationCap,
+  ShieldCheck,
+  Award,
+  Star,
+  CheckCircle2,
+} from "lucide-react";
+import Adil_Sir from "../assets/Adil_Sir.webp";
 
 export default function MentorSection() {
   return (
@@ -10,7 +18,11 @@ export default function MentorSection() {
           {/* LEFT */}
           <div className="relative">
             <div className="overflow-hidden rounded-2xl border border-[#EDEAE3]/10">
-              <img src="/mentor/alan.png" alt="Alan Sir" className="w-full object-cover" />
+              <img
+                src={Adil_Sir}
+                alt="Adil Ameen"
+                className="w-full object-cover"
+              />
             </div>
 
             {/* Floating card — hard offset shadow, matching the hero badge
@@ -35,13 +47,13 @@ export default function MentorSection() {
             </span>
 
             <h2 className="mt-6 font-serif text-4xl font-medium text-[#EDEAE3] md:text-5xl">
-              Learn from <span className="text-[#FFB627]">Alan Sir</span>
+              Learn from <span className="text-[#FFB627]">Adil Sir</span>
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-[#A8A29B]">
-              Alan Sir has helped thousands of students begin their ethical
-              hacking journey through practical teaching, structured
-              learning, and beginner-friendly explanations in Malayalam.
+              Adil Sir has helped thousands of students begin their ethical
+              hacking journey through practical teaching, structured learning,
+              and beginner-friendly explanations in Malayalam.
             </p>
 
             {/* Stats */}
