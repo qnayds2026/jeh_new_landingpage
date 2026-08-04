@@ -30,70 +30,63 @@ const cards = [
   },
 ];
 
-export default function LearnSection({onEnrollClick,}) {
+export default function LearnSection({ onEnrollClick }) {
   return (
-    <section className="relative overflow-hidden bg-[#0A0908] py-24">
-      {/* Single off-center glow, matching the hero background instead of
-          a symmetric centered blob */}
-      <div className="absolute -right-32 top-0 h-[500px] w-[500px] rounded-full bg-[#FFB627]/10 blur-[130px]" />
+    <section className="relative overflow-hidden bg-[#0A0B0A] py-24">
+      <div className="absolute -right-32 top-0 h-[500px] w-[500px] rounded-full bg-[#3FA66E]/10 blur-[130px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-        {/* Heading */}
         <div className="mx-auto max-w-4xl text-center">
-          <span className="inline-flex -rotate-1 items-center bg-[#FFB627] px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-[#0A0908] shadow-[3px_3px_0_rgba(237,234,227,0.15)]">
+          <span className="inline-flex -rotate-1 items-center bg-[#3FA66E] px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-[#0A0B0A] shadow-[3px_3px_0_rgba(234,237,234,0.15)]">
             What You'll Learn
           </span>
 
-          <h2 className="mt-6 font-serif text-4xl font-medium leading-tight text-[#EDEAE3] md:text-5xl">
+          <h2 className="mt-6 font-serif text-4xl font-medium leading-tight text-[#EAEDEA] md:text-5xl">
             What you'll learn in this{" "}
-            <span className="text-[#FFB627]">30-day ethical hacking</span>{" "}
+            <span className="text-[#3FA66E]">30-day ethical hacking</span>{" "}
             masterclass
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-[#A8A29B]">
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-[#A3A9A3]">
             Whether you're a student, job seeker, or working professional, this
             masterclass gives you the practical skills, mindset, and roadmap
             needed to confidently begin your cyber security journey.
           </p>
         </div>
 
-        {/* Cards */}
         <div className="mt-20 grid gap-8 lg:grid-cols-3">
           {cards.map((card) => {
             const Icon = card.icon;
             return (
               <div
                 key={card.id}
-                className="group relative overflow-hidden rounded-2xl border border-[#EDEAE3]/10 bg-[#12100D] p-8 transition-transform duration-300 hover:-translate-y-1.5"
+                className="group relative overflow-hidden rounded-2xl border border-[#EAEDEA]/10 bg-[#121412] p-8 transition-transform duration-300 hover:-translate-y-1.5"
               >
-                {/* Number — kept from the original, it was a good touch;
-                    just recolored to sit quietly in the corner */}
-                <div className="absolute right-6 top-6 font-serif text-6xl text-[#EDEAE3]/5">
+                <div className="absolute right-6 top-6 font-serif text-6xl text-[#EAEDEA]/5">
                   {card.id}
                 </div>
 
-                <span className="text-xs font-bold uppercase tracking-widest text-[#FFB627]">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#3FA66E]">
                   {card.tag}
                 </span>
 
-                {/* Icon — flat, single-color, no gradient tile */}
-                <div className="mt-6 flex h-14 w-14 items-center justify-center rounded-xl border border-[#FFB627]/25 bg-[#FFB627]/10">
-                  <Icon size={26} className="text-[#FFB627]" />
+                <div className="mt-6 flex h-14 w-14 items-center justify-center rounded-xl border border-[#3FA66E]/25 bg-[#3FA66E]/10">
+                  <Icon size={26} className="text-[#3FA66E]" />
                 </div>
 
-                <h3 className="mt-7 font-serif text-2xl font-medium leading-snug text-[#EDEAE3]">
+                <h3 className="mt-7 font-serif text-2xl font-medium leading-snug text-[#EAEDEA]">
                   {card.title}
                 </h3>
 
-                <p className="mt-4 leading-7 text-[#A8A29B]">
+                <p className="mt-4 leading-7 text-[#A3A9A3]">
                   {card.description}
                 </p>
 
-                <div className="mt-7 space-y-3 border-t border-[#EDEAE3]/10 pt-6">
+                <div className="mt-7 space-y-3 border-t border-[#EAEDEA]/10 pt-6">
                   {card.points.map((point) => (
                     <div key={point} className="flex items-center gap-3">
-                      <div className="h-1.5 w-1.5 rounded-full bg-[#FFB627]" />
-                      <span className="text-sm text-[#EDEAE3]/80">{point}</span>
+                      <div className="h-1.5 w-1.5 rounded-full bg-[#3FA66E]" />
+                      <span className="text-sm text-[#EAEDEA]/80">{point}</span>
                     </div>
                   ))}
                 </div>
@@ -102,12 +95,11 @@ export default function LearnSection({onEnrollClick,}) {
           })}
         </div>
 
-        {/* CTA */}
         <div className="mt-16 text-center">
-          <button  
-          onClick={onEnrollClick}       
+          <button
+            onClick={onEnrollClick}
             type="button"
-            className="group inline-flex items-center gap-3 rounded-xl bg-[#FFB627] px-10 py-5 text-lg font-bold text-[#0A0908] shadow-[4px_4px_0_rgba(237,234,227,0.15)] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFB627] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0908]"
+            className="group inline-flex items-center gap-3 rounded-xl bg-[#3FA66E] px-10 py-5 text-lg font-bold text-[#0A0B0A] shadow-[4px_4px_0_rgba(234,237,234,0.15)] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FA66E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0B0A]"
           >
             Start Learning Today
             <ArrowRight

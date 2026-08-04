@@ -36,35 +36,29 @@ const faqs = [
 
 export default function FAQ() {
   const [active, setActive] = useState(0);
-
-  const toggle = (index) => {
-    setActive(active === index ? null : index);
-  };
+  const toggle = (index) => setActive(active === index ? null : index);
 
   return (
-    <section className="relative overflow-hidden bg-[#0A0908] py-28">
-      {/* Off-center glow, matching every other section */}
-      <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-[#FFB627]/8 blur-[130px]" />
+    <section className="relative overflow-hidden bg-[#0A0B0A] py-28">
+      <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-[#3FA66E]/8 blur-[130px]" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6">
-        {/* Heading */}
         <div className="text-center">
-          <span className="inline-flex -rotate-1 items-center bg-[#FFB627] px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-[#0A0908] shadow-[3px_3px_0_rgba(237,234,227,0.15)]">
+          <span className="inline-flex -rotate-1 items-center bg-[#3FA66E] px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-[#0A0B0A] shadow-[3px_3px_0_rgba(234,237,234,0.15)]">
             Frequently Asked Questions
           </span>
 
-          <h2 className="mt-8 font-serif text-4xl font-medium leading-tight text-[#EDEAE3] md:text-5xl">
+          <h2 className="mt-8 font-serif text-4xl font-medium leading-tight text-[#EAEDEA] md:text-5xl">
             Have questions?
-            <span className="block text-[#FFB627]">We've got answers.</span>
+            <span className="block text-[#3FA66E]">We've got answers.</span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#A8A29B]">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#A3A9A3]">
             Everything you need to know before joining the 30-day ethical
             hacking masterclass.
           </p>
         </div>
 
-        {/* FAQ */}
         <div className="mt-16 space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = active === index;
@@ -73,34 +67,32 @@ export default function FAQ() {
                 key={index}
                 className={`overflow-hidden rounded-2xl border transition-colors duration-300 ${
                   isOpen
-                    ? "border-[#FFB627]/30 bg-[#16120D]"
-                    : "border-[#EDEAE3]/10 bg-[#12100D]"
+                    ? "border-[#3FA66E]/30 bg-[#161612]"
+                    : "border-[#EAEDEA]/10 bg-[#121412]"
                 }`}
               >
                 <button
                   onClick={() => toggle(index)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between px-7 py-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFB627] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0908]"
+                  className="flex w-full items-center justify-between px-7 py-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FA66E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0B0A]"
                 >
-                  <h3 className="pr-6 text-lg font-medium text-[#EDEAE3]">
+                  <h3 className="pr-6 text-lg font-medium text-[#EAEDEA]">
                     {faq.question}
                   </h3>
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#FFB627]/25 bg-[#FFB627]/10">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#3FA66E]/25 bg-[#3FA66E]/10">
                     {isOpen ? (
-                      <Minus className="text-[#FFB627]" size={18} />
+                      <Minus className="text-[#3FA66E]" size={18} />
                     ) : (
-                      <Plus className="text-[#FFB627]" size={18} />
+                      <Plus className="text-[#3FA66E]" size={18} />
                     )}
                   </div>
                 </button>
 
                 <div
-                  className={`grid transition-all duration-500 ${
-                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                  }`}
+                  className={`grid transition-all duration-500 ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-7 pb-7 leading-7 text-[#A8A29B]">
+                    <p className="px-7 pb-7 leading-7 text-[#A3A9A3]">
                       {faq.answer}
                     </p>
                   </div>
@@ -110,16 +102,14 @@ export default function FAQ() {
           })}
         </div>
 
-        {/* Bottom note — real link instead of a styled span, so it's
-            keyboard-focusable and actually navigable */}
         <div className="mt-16 text-center">
-          <p className="text-[#A8A29B]">
+          <p className="text-[#A3A9A3]">
             Still have questions?{" "}
             <a
               href="https://wa.me/YOUR_NUMBER"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-1 font-semibold text-[#FFB627] underline decoration-[#FFB627]/30 underline-offset-4 transition-colors hover:decoration-[#FFB627] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFB627] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0908]"
+              className="ml-1 font-semibold text-[#3FA66E] underline decoration-[#3FA66E]/30 underline-offset-4 transition-colors hover:decoration-[#3FA66E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FA66E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0B0A]"
             >
               Contact us on WhatsApp →
             </a>
