@@ -1,98 +1,288 @@
-import {
-  MonitorPlay,
-  Globe,
-  MessageCircle,
-  Infinity,
-  BookOpen,
-  Award,
-} from "lucide-react";
+// import {
+//   X,
+//   Check,
+//   ShieldCheck,
+//   Award,
+//   Users,
+//   MessageCircle,
+//   BookOpen,
+// } from "lucide-react";
 
-const features = [
-  {
-    icon: MonitorPlay,
-    title: "30-Day Recorded Course",
-    description:
-      "Learn anytime at your own pace with structured lessons designed for beginners.",
-  },
-  {
-    icon: Globe,
-    title: "100% Malayalam",
-    description:
-      "Complex cyber security concepts explained in simple Malayalam.",
-  },
-  {
-    icon: MessageCircle,
-    title: "WhatsApp Support",
-    description:
-      "Get your doubts cleared and stay connected with our learning community.",
-  },
-  {
-    icon: Infinity,
-    title: "Lifetime Access",
-    description:
-      "Rewatch lessons anytime and continue learning whenever you need.",
-  },
-  {
-    icon: BookOpen,
-    title: "Hands-on Learning",
-    description:
-      "Understand cyber security using practical demonstrations instead of only theory.",
-  },
-  {
-    icon: Award,
-    title: "Trusted by 10,000+ Students",
-    description:
-      "Thousands of students across Kerala have started their cyber security journey with us.",
-  },
-];
+// const comparisons = [
+//   {
+//     traditional: "English-heavy learning",
+//     qnayds: "100% Malayalam",
+//   },
+//   {
+//     traditional: "No clear learning path",
+//     qnayds: "Structured 30-Day Roadmap",
+//   },
+//   {
+//     traditional: "Learn alone without support",
+//     qnayds: "WhatsApp Community Support",
+//   },
+//   {
+//     traditional: "Random or unstructured videos",
+//     qnayds: "Organized Recorded Sessions",
+//   },
+//   {
+//     traditional: "Mostly theory",
+//     qnayds: "Practical Demonstrations",
+//   },
+//   {
+//     traditional: "Difficult for beginners",
+//     qnayds: "Beginner-Friendly Teaching",
+//   },
+// ];
 
-export default function WhyChoose() {
-  return (
-    <section className="relative overflow-hidden bg-[#0E0F0E] py-24">
-      <div className="absolute -left-32 top-0 h-96 w-96 rounded-full bg-[#3FA66E]/8 blur-[130px]" />
+// const trustPoints = [
+//   {
+//     icon: ShieldCheck,
+//     title: "Beginner Friendly",
+//   },
+//   {
+//     icon: MessageCircle,
+//     title: "WhatsApp Support",
+//   },
+//   {
+//     icon: BookOpen,
+//     title: "Structured Learning",
+//   },
+//   {
+//     icon: Users,
+//     title: "10,000+ Students",
+//   },
+//   {
+//     icon: Award,
+//     title: "Experienced Trainer",
+//   },
+// ];
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex rotate-1 items-center bg-[#3FA66E] px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-[#0A0B0A] shadow-[3px_3px_0_rgba(234,237,234,0.15)]">
-            Why Choose QNAYDS
-          </span>
+// export default function WhyChoose() {
+//   return (
+//     <section className="relative overflow-hidden bg-[#050505] py-24 sm:py-28">
+//       {/* =====================================================
+//           BACKGROUND
+//       ===================================================== */}
 
-          <h2 className="mt-6 font-serif text-4xl font-medium leading-tight text-[#EAEDEA] md:text-5xl">
-            Everything you need to start your{" "}
-            <span className="text-[#3FA66E]">cyber security journey</span>
-          </h2>
+//       <div className="pointer-events-none absolute -right-40 top-10 h-[500px] w-[500px] rounded-full bg-[#00FF41]/[0.035] blur-[140px]" />
 
-          <p className="mt-6 text-lg leading-8 text-[#A3A9A3]">
-            This isn't just another online course. It's a structured learning
-            experience designed to help complete beginners confidently enter the
-            world of ethical hacking and cyber security.
-          </p>
-        </div>
+//       <div className="pointer-events-none absolute -left-40 bottom-0 h-[400px] w-[400px] rounded-full bg-[#00FF41]/[0.025] blur-[130px]" />
 
-        <div className="mt-20 grid gap-x-12 gap-y-10 md:grid-cols-2">
-          {features.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={index}
-                className="flex gap-5 border-b border-[#EAEDEA]/10 pb-8 last:border-0 md:[&:nth-last-child(-n+2)]:border-0"
-              >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#3FA66E]/25 bg-[#3FA66E]/10">
-                  <Icon size={22} className="text-[#3FA66E]" />
-                </div>
-                <div>
-                  <h3 className="font-serif text-xl font-medium text-[#EAEDEA]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 leading-7 text-[#A3A9A3]">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
+//       {/* Cyber grid */}
+//       <div
+//         className="pointer-events-none absolute inset-0 opacity-[0.018]"
+//         style={{
+//           backgroundImage: `
+//             linear-gradient(#00FF41 1px, transparent 1px),
+//             linear-gradient(90deg, #00FF41 1px, transparent 1px)
+//           `,
+//           backgroundSize: "50px 50px",
+//         }}
+//       />
+
+//       <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+//         {/* =====================================================
+//             HEADING
+//         ===================================================== */}
+
+//         <div className="mx-auto max-w-3xl text-center">
+//           <span
+//             className="
+//               inline-flex
+//               items-center
+//               rounded-full
+//               border border-[#00FF41]/25
+//               bg-[#00FF41]/[0.06]
+//               px-4 py-2
+//               text-xs
+//               font-bold
+//               uppercase
+//               tracking-[0.16em]
+//               text-[#00FF41]
+//             "
+//           >
+//             Why QNAYDS
+//           </span>
+
+//           <h2
+//             className="
+//               mt-6
+//               font-serif
+//               text-4xl
+//               font-medium
+//               leading-tight
+//               text-white
+//               sm:text-5xl
+//               lg:text-6xl
+//             "
+//           >
+//             Why QNAYDS Is <span className="text-[#00FF41]">Different</span>
+//           </h2>
+
+//           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[#777] sm:text-lg">
+//             You can learn cybersecurity from anywhere. The difference is having
+//             the right language, structure, support and practical direction.
+//           </p>
+//         </div>
+
+//         {/* =====================================================
+//             COMPARISON TABLE
+//         ===================================================== */}
+
+//         <div className="mt-14 overflow-hidden rounded-2xl border border-white/10 bg-[#0B0B0B] shadow-[0_25px_80px_rgba(0,0,0,0.35)]">
+//           {/* Desktop Header */}
+//           <div className="hidden grid-cols-2 border-b border-white/10 sm:grid">
+//             <div className="bg-white/[0.025] px-6 py-5 text-center sm:px-8">
+//               <p className="text-sm font-bold uppercase tracking-widest text-[#777]">
+//                 Traditional Learning
+//               </p>
+//             </div>
+
+//             <div className="border-l border-[#00FF41]/10 bg-[#00FF41]/[0.035] px-6 py-5 text-center sm:px-8">
+//               <p className="text-sm font-bold uppercase tracking-widest text-[#00FF41]">
+//                 QNAYDS Academy
+//               </p>
+//             </div>
+//           </div>
+
+//           {/* Rows */}
+//           <div>
+//             {comparisons.map((item, index) => (
+//               <div
+//                 key={index}
+//                 className="
+//                   grid
+//                   grid-cols-1
+//                   border-b
+//                   border-white/[0.07]
+//                   last:border-b-0
+//                   sm:grid-cols-2
+//                 "
+//               >
+//                 {/* Traditional */}
+//                 <div className="flex items-center gap-3 px-5 py-5 sm:px-8">
+//                   <X size={18} className="shrink-0 text-red-400/80" />
+
+//                   <div>
+//                     <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-[#555] sm:hidden">
+//                       Traditional Learning
+//                     </p>
+
+//                     <span className="text-sm text-[#888] sm:text-base">
+//                       {item.traditional}
+//                     </span>
+//                   </div>
+//                 </div>
+
+//                 {/* QNAYDS */}
+//                 <div
+//                   className="
+//                     flex
+//                     items-center
+//                     gap-3
+//                     border-t
+//                     border-white/[0.06]
+//                     bg-[#00FF41]/[0.025]
+//                     px-5
+//                     py-5
+//                     sm:border-l
+//                     sm:border-t-0
+//                     sm:border-[#00FF41]/10
+//                     sm:px-8
+//                   "
+//                 >
+//                   <Check size={19} className="shrink-0 text-[#00FF41]" />
+
+//                   <div>
+//                     <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-[#00FF41]/70 sm:hidden">
+//                       QNAYDS Academy
+//                     </p>
+
+//                     <span className="text-sm font-semibold text-white sm:text-base">
+//                       {item.qnayds}
+//                     </span>
+//                   </div>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+
+//         {/* =====================================================
+//             TRUST / RECOGNITION
+//         ===================================================== */}
+
+//         <div className="mt-20 text-center">
+//           <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#555]">
+//             Built Around Your Learning Experience
+//           </p>
+
+//           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+//             {trustPoints.map((item) => {
+//               const Icon = item.icon;
+
+//               return (
+//                 <div
+//                   key={item.title}
+//                   className="
+//                     flex
+//                     items-center
+//                     justify-center
+//                     gap-3
+//                     rounded-xl
+//                     border
+//                     border-white/10
+//                     bg-[#0B0B0B]
+//                     px-4
+//                     py-4
+//                     transition-all
+//                     duration-300
+//                     hover:border-[#00FF41]/25
+//                     hover:bg-[#00FF41]/[0.025]
+//                   "
+//                 >
+//                   <Icon size={19} className="shrink-0 text-[#00FF41]" />
+
+//                   <span className="text-sm font-medium text-[#B5B5B5]">
+//                     {item.title}
+//                   </span>
+//                 </div>
+//               );
+//             })}
+//           </div>
+//         </div>
+
+//         {/* =====================================================
+//             VALUE STATEMENT
+//         ===================================================== */}
+
+//         <div className="mx-auto mt-16 max-w-3xl text-center">
+//           <div
+//             className="
+//               rounded-2xl
+//               border
+//               border-[#00FF41]/15
+//               bg-[#00FF41]/[0.025]
+//               px-6
+//               py-7
+//               sm:px-10
+//             "
+//           >
+//             <ShieldCheck size={28} className="mx-auto text-[#00FF41]" />
+
+//             <h3 className="mt-4 font-serif text-2xl text-white sm:text-3xl">
+//               More than just recorded videos.
+//             </h3>
+
+//             <p className="mt-3 text-sm leading-7 text-[#777] sm:text-base">
+//               You're getting a structured path to learn cybersecurity,
+//               beginner-friendly explanations, practical demonstrations and a
+//               community to support you along the way.
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }

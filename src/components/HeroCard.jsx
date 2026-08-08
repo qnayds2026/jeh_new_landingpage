@@ -17,15 +17,16 @@ const features = [
 
 export default function HeroCard({ onEnrollClick }) {
   return (
-    <div className="sticky top-8 overflow-hidden rounded-2xl border border-[#EAEDEA]/10 bg-[#121412]">
-      {/* Offer banner — a stamped ticket stub, not a gradient alert bar */}
-      <div className="relative bg-[#3FA66E] py-3 text-center">
-        <p className="rotate-[-0.5deg] text-sm font-bold uppercase tracking-widest text-[#0A0B0A]">
+    <div className="sticky top-8 overflow-hidden rounded-2xl border border-white/10 bg-[#0D0D0D] shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+      {/* ================= OFFER BANNER ================= */}
+      <div className="relative bg-[#00FF41] py-3 text-center">
+        <p className="text-sm font-bold uppercase tracking-[0.15em] text-black">
           Limited Time Offer
         </p>
-        {/* Perforated edge, like a torn ticket */}
+
+        {/* Perforated edge */}
         <div
-          className="absolute -bottom-[5px] left-0 h-[10px] w-full bg-[#121412]"
+          className="absolute -bottom-[5px] left-0 h-[10px] w-full bg-[#0D0D0D]"
           style={{
             maskImage:
               "radial-gradient(circle at 6px 0, transparent 5px, black 5.5px)",
@@ -40,70 +41,139 @@ export default function HeroCard({ onEnrollClick }) {
         />
       </div>
 
-      <div className="p-8 pt-10">
-        <h2 className="font-serif text-3xl font-medium leading-tight">
-          Get instant access
+      {/* ================= CONTENT ================= */}
+      <div className="p-5 pt-9 sm:p-6 sm:pt-10 lg:p-8 lg:pt-10">
+        {/* Heading */}
+        <h2 className="font-serif text-2xl font-medium leading-tight text-white sm:text-3xl">
+          Get Instant Access
         </h2>
-        <p className="mt-2 text-[#A3A9A3]">
-          Everything you need to begin your ethical hacking journey.
+
+        <p className="mt-2 text-sm leading-6 text-[#A3A3A3] sm:text-base">
+          Everything you need to begin your Ethical Hacking journey.
         </p>
 
-        {/* Pricing — receipt style, dashed rule instead of a boxed gradient */}
-        <div className="my-8 rounded-xl border border-dashed border-[#EAEDEA]/20 p-6">
-          <div className="flex items-baseline justify-between text-sm text-[#A3A9A3]">
+        {/* ================= PRICING ================= */}
+        <div className="my-7 rounded-xl border border-[#00FF41]/20 bg-[#111111] p-4 sm:my-8 sm:p-6">
+          <div className="flex items-baseline justify-between gap-3 text-sm text-[#737373]">
             <span>Regular price</span>
-            <span className="line-through">₹2,000</span>
+
+            <span className="line-through">
+              ₹2,000
+            </span>
           </div>
-          <div className="my-4 border-t border-dashed border-[#EAEDEA]/20" />
-          <div className="flex items-baseline justify-between">
-            <span className="text-sm text-[#A3A9A3]">Offer price</span>
-            <span className="flex items-center gap-1 font-serif text-5xl font-medium text-[#3FA66E]">
-              <BadgeIndianRupee size={30} className="shrink-0" />
+
+          <div className="my-4 border-t border-dashed border-white/10" />
+
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <span className="text-sm text-[#A3A3A3]">
+              Offer price
+            </span>
+
+            <span className="flex items-center gap-1 font-serif text-4xl font-semibold text-[#00FF41] sm:text-5xl">
+              <BadgeIndianRupee
+                size={26}
+                className="shrink-0 sm:h-7 sm:w-7"
+              />
               999
             </span>
           </div>
-          <p className="mt-3 text-right text-sm font-medium text-[#EAEDEA]">
-            You save ₹1,001 today
+
+          <div className="mt-3 flex items-center justify-between gap-3">
+            <span className="text-xs text-[#737373]">
+              Limited time pricing
+            </span>
+
+            <p className="text-right text-xs font-semibold text-[#00FF41] sm:text-sm">
+              Save ₹1,001
+            </p>
+          </div>
+        </div>
+
+        {/* ================= INCLUDED ================= */}
+        <div>
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.15em] text-[#737373]">
+            What's Included
           </p>
+
+          <div className="space-y-3">
+            {features.map((item) => (
+              <div
+                key={item}
+                className="flex items-start gap-3"
+              >
+                <CheckCircle2
+                  size={18}
+                  className="mt-0.5 shrink-0 text-[#00FF41]"
+                />
+
+                <span className="text-sm leading-6 text-[#E5E5E5]">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Included */}
-        <div className="space-y-3">
-          {features.map((item) => (
-            <div key={item} className="flex items-center gap-3">
-              <CheckCircle2 size={18} className="shrink-0 text-[#3FA66E]" />
-              <span className="text-[#EAEDEA]">{item}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA — solid green, hard offset shadow to match the hero badge,
-            no gradient */}
+        {/* ================= CTA ================= */}
         <button
           onClick={onEnrollClick}
           type="button"
-          className="group mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-[#3FA66E] py-5 text-lg font-bold text-[#0A0B0A] shadow-[4px_4px_0_rgba(234,237,234,0.15)] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3FA66E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#121412]"
+          className="
+            group mt-7 flex w-full items-center justify-center gap-2
+            rounded-xl
+            bg-[#00FF41]
+            px-5 py-4
+            text-base font-bold
+            text-black
+            shadow-[0_0_25px_rgba(0,255,65,0.12)]
+            transition-all duration-200
+            hover:-translate-y-0.5
+            hover:shadow-[0_0_35px_rgba(0,255,65,0.25)]
+            focus-visible:outline-none
+            focus-visible:ring-2
+            focus-visible:ring-[#00FF41]
+            focus-visible:ring-offset-2
+            focus-visible:ring-offset-[#0D0D0D]
+            sm:mt-8
+            sm:py-5
+            sm:text-lg
+          "
         >
           Get Instant Access
+
           <ArrowRight
             size={20}
-            className="transition group-hover:translate-x-1"
+            className="shrink-0 transition-transform duration-200 group-hover:translate-x-1"
           />
         </button>
 
-        {/* Trust */}
-        <div className="mt-8 space-y-4 border-t border-[#EAEDEA]/10 pt-6 text-[#A3A9A3]">
+        {/* ================= TRUST ================= */}
+        <div className="mt-7 space-y-3 border-t border-white/10 pt-6 text-sm text-[#8A8A8A]">
           <div className="flex items-center gap-3">
-            <Lock size={18} />
-            Secure payment
+            <Lock
+              size={17}
+              className="shrink-0 text-[#00FF41]"
+            />
+
+            <span>Secure payment</span>
           </div>
+
           <div className="flex items-center gap-3">
-            <Clock3 size={18} />
-            Instant course access
+            <Clock3
+              size={17}
+              className="shrink-0 text-[#00FF41]"
+            />
+
+            <span>Instant course access</span>
           </div>
+
           <div className="flex items-center gap-3">
-            <ShieldCheck size={18} />
-            Trusted by 10,000+ students
+            <ShieldCheck
+              size={17}
+              className="shrink-0 text-[#00FF41]"
+            />
+
+            <span>Trusted by 10,000+ students</span>
           </div>
         </div>
       </div>
